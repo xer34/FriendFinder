@@ -1,0 +1,22 @@
+{
+  "name": "friendishfinder",
+  "version": "1.0.0",
+  "description": "hatinLyfe",
+  "main": "server.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "whatup",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xer34/FriendFinder.git"
+  },
+  "author": "Me",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xer34/FriendFinder/issues"
+  },
+  "homepage": "https://github.com/xer34/FriendFinder#readme"
+}

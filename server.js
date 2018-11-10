@@ -15,58 +15,53 @@ app.listen(PORT, function() {
 app.get("/", function(req, res) {
   res.sendFile(path.join(__dirname + "/app/public/home.html"));
 });
-
 app.get("/survey", function(req, res) {
   res.sendFile(path.join(__dirname, "/app/public/survey.html"));
 });
-
-
+//api routes
 app.get("/api/friends", function(req, res) {
-  return res.json(friends);
+  return res.json(friendsArray);
 });
-
 app.post("/api/friends", function(req, res) {
   var friends = req.body;
-
-  waitlist.push(friends);
-
-  res.json(friends);
+  friendsArray.push(friends);
+  res.json(friendsArray);
 });
 // again, going to fix pathing and put this into its own file when I get to it
-var friends = [
+var friendsArray = [
   {
-      "name":"TestGuy",
-      "photo":"https://images.fineartamerica.com/images-medium-large-5/jack-skellington-movie-prints.jpg",
+      "name":"Guy Bro",
+      "photo":"https://reason.org/wp-content/uploads/2018/01/guybentley.jpg",
       "scores":[
-          5,
-          1,
-          4,
-          4,
-          5,
           1,
           2,
-          5,
+          3,
           4,
+          5,
+          6,
+          7,
+          8,
+          9,
           1
         ]
     }, {
-      "name":"TestGuy2",
-      "photo":"https://images.fineartamerica.com/images-medium-large-5/jack-skellington-movie-prints.jpg",
+      "name":"Dude Fella",
+      "photo":"https://www.victoria.ac.nz/images/staffpics/guy-sinclair.jpg",
       "scores":[
+          9,
+          8,
+          7,
+          6,
           5,
-          1,
           4,
-          4,
-          5,
-          1,
+          3,
           2,
-          5,
-          4,
+          1,
           1
         ]
     },{
-      "name":"TestGuy3",
-      "photo":"https://images.fineartamerica.com/images-medium-large-5/jack-skellington-movie-prints.jpg",
+      "name":"Your Old Roomate",
+      "photo":"https://bloximages.chicago2.vip.townnews.com/nwitimes.com/content/tncms/assets/v3/editorial/0/d9/0d98cbc7-0408-518e-a67d-50ba01ca1bfa/5a7e4016d73b4.image.jpg",
       "scores":[
           5,
           1,
@@ -81,3 +76,4 @@ var friends = [
         ]
     },
   ]
+
