@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "hatinLyfe",
   "main": "server.js",
-  "dependencies": {},
+  "dependencies": {
+    "express": "^4.16.3"
+  },
   "devDependencies": {},
   "scripts": {
     "test": "whatup",
