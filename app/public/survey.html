@@ -29,6 +29,10 @@
         padding: 0px;
         margin: 0px;
       }
+      img {
+        width: 150px;
+        height: 150px;
+      }
     </style>
   </head>
   <body>
@@ -160,111 +164,98 @@
         ><br /><br />
         <br />
         <br />
-        <!-- Submit Button -->
         <button
         data-toggle="modal"
         data-target="#exampleModal"
           type="submit"
           class="btn btn-danger btn-lg btn-block"
           id="submit"
-          onclick='runDaNumbers()'
         >
           </i> Submit
         </button>
         <hr />
       </div>
     </div>
-
-  <!-- Modal -->
   <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <h5 class="modal-title" id="exampleModalLabel">Bestest Match We Could Find!</h5>
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
           </button>
         </div>
         <div class="modal-body">
-          ...
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button type="button" class="btn btn-primary">Save changes</button>
         </div>
       </div>
     </div>
   </div>
     <!-------------------------------------------- silly things to follow  ------------------------------------------>
-    <script>
-      var colors = new Array(
-        [62, 35, 255],
-        [60, 255, 60],
-        [255, 35, 98],
-        [45, 175, 230],
-        [255, 0, 255],
-        [255, 128, 0]
-      );
-      var step = 0;
-      //color table indices for:
-      // current color left
-      // next color left
-      // current color right
-      // next color right
-      var colorIndices = [0, 1, 2, 3];
-      //transition speed
-      var gradientSpeed = 0.002;
-      function updateGradient() {
-        if ($ === undefined) return;
-        var c0_0 = colors[colorIndices[0]];
-        var c0_1 = colors[colorIndices[1]];
-        var c1_0 = colors[colorIndices[2]];
-        var c1_1 = colors[colorIndices[3]];
-        var istep = 1 - step;
-        var r1 = Math.round(istep * c0_0[0] + step * c0_1[0]);
-        var g1 = Math.round(istep * c0_0[1] + step * c0_1[1]);
-        var b1 = Math.round(istep * c0_0[2] + step * c0_1[2]);
-        var color1 = "rgb(" + r1 + "," + g1 + "," + b1 + ")";
-        var r2 = Math.round(istep * c1_0[0] + step * c1_1[0]);
-        var g2 = Math.round(istep * c1_0[1] + step * c1_1[1]);
-        var b2 = Math.round(istep * c1_0[2] + step * c1_1[2]);
-        var color2 = "rgb(" + r2 + "," + g2 + "," + b2 + ")";
-        $("#gradient")
-          .css({
-            background:
-              "-webkit-gradient(linear, left top, right top, from(" +
-              color1 +
-              "), to(" +
-              color2 +
-              "))"
-          })
-          .css({
-            background:
-              "-moz-linear-gradient(left, " +
-              color1 +
-              " 0%, " +
-              color2 +
-              " 100%)"
-          });
-        step += gradientSpeed;
-        if (step >= 1) {
-          step %= 1;
-          colorIndices[0] = colorIndices[1];
-          colorIndices[2] = colorIndices[3];
-          //pick two new target color indices
-          //do not pick the same as the current one
-          colorIndices[1] =
-            (colorIndices[1] +
-              Math.floor(1 + Math.random() * (colors.length - 1))) %
-            colors.length;
-          colorIndices[3] =
-            (colorIndices[3] +
-              Math.floor(1 + Math.random() * (colors.length - 1))) %
-            colors.length;
-        }
-      }
-      setInterval(updateGradient, 10);
-    </script>
+<script >var colors = new Array(
+  [62, 35, 255],
+  [60, 255, 60],
+  [255, 35, 98],
+  [45, 175, 230],
+  [255, 0, 255],
+  [255, 128, 0]
+);
+var step = 0;
+var colorIndices = [0, 1, 2, 3];
+var gradientSpeed = 0.002;
+function updateGradient() {
+  if ($ === undefined) return;
+  var c0_0 = colors[colorIndices[0]];
+  var c0_1 = colors[colorIndices[1]];
+  var c1_0 = colors[colorIndices[2]];
+  var c1_1 = colors[colorIndices[3]];
+  var istep = 1 - step;
+  var r1 = Math.round(istep * c0_0[0] + step * c0_1[0]);
+  var g1 = Math.round(istep * c0_0[1] + step * c0_1[1]);
+  var b1 = Math.round(istep * c0_0[2] + step * c0_1[2]);
+  var color1 = "rgb(" + r1 + "," + g1 + "," + b1 + ")";
+  var r2 = Math.round(istep * c1_0[0] + step * c1_1[0]);
+  var g2 = Math.round(istep * c1_0[1] + step * c1_1[1]);
+  var b2 = Math.round(istep * c1_0[2] + step * c1_1[2]);
+  var color2 = "rgb(" + r2 + "," + g2 + "," + b2 + ")";
+  $("#gradient")
+    .css({
+      background:
+        "-webkit-gradient(linear, left top, right top, from(" +
+        color1 +
+        "), to(" +
+        color2 +
+        "))"
+    })
+    .css({
+      background:
+        "-moz-linear-gradient(left, " +
+        color1 +
+        " 0%, " +
+        color2 +
+        " 100%)"
+    });
+  step += gradientSpeed;
+  if (step >= 1) {
+    step %= 1;
+    colorIndices[0] = colorIndices[1];
+    colorIndices[2] = colorIndices[3];
+    //pick two new target color indices
+    //do not pick the same as the current one
+    colorIndices[1] =
+      (colorIndices[1] +
+        Math.floor(1 + Math.random() * (colors.length - 1))) %
+      colors.length;
+    colorIndices[3] =
+      (colorIndices[3] +
+        Math.floor(1 + Math.random() * (colors.length - 1))) %
+      colors.length;
+  }
+}
+setInterval(updateGradient, 10);
+</script>
     <script
     src="https://code.jquery.com/jquery-3.3.1.min.js"
     integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
@@ -281,10 +272,8 @@
     ></script>
     <!-- ------------------------------------------ -->
 <script type="text/javascript">
-  // Capture the form inputs
   $("#submit").on("click", function(event) {
     event.preventDefault();
-    // Form validation
     function validateForm() {
       var isValid = true;
       $(".form-control").each(function() {
@@ -299,37 +288,80 @@
       });
       return isValid;
     }
-    // If all required fields are filled
     if (validateForm()) {
-      // Create an object for the user"s data
       var friends = {
         name: $("#name").val(),
         photo: $("#photo").val(),
         scores: [
-          $("#q1").val(),
-          $("#q2").val(),
-          $("#q3").val(),
-          $("#q4").val(),
-          $("#q5").val(),
-          $("#q6").val(),
-          $("#q7").val(),
-          $("#q8").val(),
-          $("#q9").val(),
-          $("#q10").val()
+          parseInt($("#q1").val(), 10),
+          parseInt($("#q2").val(), 10),
+          parseInt($("#q3").val(), 10),
+          parseInt($("#q4").val(), 10),
+          parseInt($("#q5").val(), 10),
+          parseInt($("#q6").val(), 10),
+          parseInt($("#q7").val(), 10),
+          parseInt($("#q8").val(), 10),
+          parseInt($("#q9").val(), 10),
+          parseInt($("#q10").val(), 10)
         ]
-      };
-      // AJAX post the data to the friends API.
-      $.post("/api/friends", friends, function(data) {
-          console.log(friends)
-          console.log("Dude pushed to array")
-          console.log(friends.scores)
+      }
+      $.post("/api/friends", friends,
+      function(data) {
+        console.log("Dude pushed to array")
 
-          
-      });
+          var yourCount = friends.scores
+  console.log("your count: " + yourCount)
+  var yourSum = (yourCount.reduce(getSum))
+  console.log("your sum: " + yourSum)
+
+})
+
+        $.ajax({ url: "/api/friends", method: "GET" })
+    .then(function(friendsArray) {
+      var counts = []
+  
+        
+
+
+      for (let i = 0; i < friendsArray.length; i++) {
+
+  var friendArrayScores = friendsArray[i].scores;
+  console.log(friendsArray[i].name + " :" + friendArrayScores)
+
+  var friendArraySum = (friendArrayScores.reduce(getSum))
+  console.log(friendsArray[i].name + " :" + friendArraySum)
+  
+counts.push(friendArraySum)
+console.log(friendArraySum)
+
+
+// var numbers = [1, 2, 3, 4];
+// Math.max(...numbers) // 4
+// Math.min(...numbers) // 1
+ 
+
+
+        var friendsArrayData = $(".modal-body");
+        var listItem = $("<li class='list-group-item mt-4'>");
+        listItem.append(
+          $("<h2>").text("Name: " + (friendsArray[i].name)),
+          $("<hr>"),
+          $("<img>").attr("src", friendsArray[i].photo),
+        );
+        friendsArrayData.append(listItem);
+      }
+      console.log("matches total score array: " + counts)
+    });
     } else {
       alert("Please answer all of the silly questions please!");
     }
   });
+
+  function getSum(total, num) {
+  return total + num;
+}
+
+
 </script>
   </body>
 </html>
