@@ -338,6 +338,10 @@ console.log(friendArraySum)
 // var numbers = [1, 2, 3, 4];
 // Math.max(...numbers) // 4
 // Math.min(...numbers) // 1
+
+// I tried -- could not figure out the logic for this problem
+
+// currently it is able to add up the score from the options the user puts in HOWEVER it is storing it as strings, even when I'm parsingInt. Furthermore I need to be able to compare both scores, which I can do, but I do not know how to reference both the users and the stored scores to display the closest match THEN display that one. 
  
 
 
@@ -347,6 +351,7 @@ console.log(friendArraySum)
           $("<h2>").text("Name: " + (friendsArray[i].name)),
           $("<hr>"),
           $("<img>").attr("src", friendsArray[i].photo),
+          $("<p>").text("Score: " + friendsArray[i].score)
         );
         friendsArrayData.append(listItem);
       }
