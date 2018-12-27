@@ -350,8 +350,9 @@ console.log(friendArraySum)
         listItem.append(
           $("<h2>").text("Name: " + (friendsArray[i].name)),
           $("<hr>"),
-          $("<img>").attr("src", friendsArray[i].photo),
-          $("<p>").text("Score: " + friendsArray[i].score)
+          $("<img>").attr("src", friendsArray[i].photo)
+          // ,
+          // $("<p>").text("Score: " + friendsArray[i].score)
         );
         friendsArrayData.append(listItem);
       }
