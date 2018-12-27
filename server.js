@@ -34,26 +34,26 @@ var friendsArray = [
     name: "Guy Bro",
     photo: "https://reason.org/wp-content/uploads/2018/01/guybentley.jpg",
     scores: [1, 2, 3, 4, 5, 5, 4, 3, 2, 1],
-    total_score: ""
+    // total_score: ""
   },
   {
     name: "Dude Fella",
     photo: "https://www.victoria.ac.nz/images/staffpics/guy-sinclair.jpg",
     scores: [3, 5, 3, 4, 3, 1, 3, 5, 1, 1],
-    total_score: ""
+    // total_score: ""
   },
   {
     name: "Your Old Roomate",
     photo:
       "https://bloximages.chicago2.vip.townnews.com/nwitimes.com/content/tncms/assets/v3/editorial/0/d9/0d98cbc7-0408-518e-a67d-50ba01ca1bfa/5a7e4016d73b4.image.jpg",
     scores: [5, 1, 4, 4, 5, 1, 2, 5, 4, 1],
-    total_score: ""
+    // total_score: ""
   },
   {
     name: "This Fella",
     photo: "https://www.victoria.ac.nz/images/staffpics/guy-sinclair.jpg",
     scores: [5, 1, 3, 2, 5, 4, 3, 2, 1, 1],
-    total_score: ""
+    // total_score: ""
   }
 ];
 
