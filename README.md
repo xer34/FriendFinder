@@ -8,7 +8,7 @@ This project is not available for additional contribution from the github commun
 
 More information:
 
-See the Live Project [Here.](https://xer34.github.io/FriendFinder/)
+See the Live Project on Heroku [Here.](https://quiet-caverns-93183.herokuapp.com/)
 
 See Under the Hood [Here.](https://github.com/xer34/FriendFinder)
 
